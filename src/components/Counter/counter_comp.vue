@@ -6,8 +6,8 @@
             <count-component></count-component>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
 
-                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">+</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">-</button>
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3" @click="add">+</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="subtract">-</button>
 
             </div>
         </div>
@@ -21,6 +21,14 @@ import countComponent from './count_comp.vue'
 export default {
     components: {
         countComponent
+    },
+    methods: {
+        add() {
+            this.$store.commit('add');
+        },
+        subtract() {
+            this.$store.commit('subtract');
+        }
     }
 }
 </script>
