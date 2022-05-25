@@ -8,7 +8,8 @@
 
                 <button type="button" class="btn btn-primary btn-lg px-4 gap-3" @click="add">+</button>
                 <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="subtract">-</button>
-
+                <hr />
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="getPrize">Get prize</button>
             </div>
         </div>
     </div>
@@ -28,6 +29,10 @@ export default {
         },
         subtract() {
             this.$store.commit('subtract');
+        },
+        getPrize() {
+            const obj = this.$store.getters.getPrize;
+            alert(`Your prize: ${obj.prize}, in ${obj.attempts} attempt/s`)
         }
     }
 }
