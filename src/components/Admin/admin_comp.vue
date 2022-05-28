@@ -23,7 +23,7 @@
         @click="adminAdd({ value: this.amount })">
           +
         </button>
-        <button type="button" class="btn btn-outline-secondary" @click="adminSubstract({ value: this.amount })">
+        <button type="button" class="btn btn-outline-secondary" @click="adminSubtract({ value: this.amount })">
           -
         </button>
       </div>
@@ -42,7 +42,7 @@ export default {
     methods:{
       ...mapMutations({
         adminAdd:'add',
-        adminSubstract: 'substract'
+        adminSubtract: 'subtract'
       }),
       // adminAdd(){
       //   this.$store.commit({
