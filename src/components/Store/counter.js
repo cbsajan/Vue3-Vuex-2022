@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const counterModule = {
     state() {
         return {
@@ -13,7 +15,9 @@ const counterModule = {
         }
     },
     getters: {
-        getCount(state) {
+        getCount(state, getters, rootState, rootGetters) {
+            // console.log(rootState.auth.auth)
+            // console.log(rootGetters.isAuth)
             return state.counter;
         },
         getAttempts(state) {

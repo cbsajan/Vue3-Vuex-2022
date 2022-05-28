@@ -17,6 +17,11 @@ const authModule = {
     actions: {
         authUser(context) {
             console.log(context)
+            console.log(context.rootState.counter.prizes)
+            console.log(context.rootGetters.getAttempts)
+
+            context.commit('add', null, { root: true })
+
             setTimeout(() => {
                 context.commit('setAuth', { value: true });
                 context.dispatch('analytics', { username: 'Francis' });
