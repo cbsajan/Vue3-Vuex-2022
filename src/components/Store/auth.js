@@ -1,4 +1,5 @@
 const authModule = {
+    namespaced: true,
     state() {
         return {
             auth: false
@@ -18,9 +19,9 @@ const authModule = {
         authUser(context) {
             console.log(context)
             console.log(context.rootState.counter.prizes)
-            console.log(context.rootGetters.getAttempts)
+            console.log(context.rootGetters['counter/getAttempts'])
 
-            context.commit('add', null, { root: true })
+            context.commit('counter/add', null, { root: true })
 
             setTimeout(() => {
                 context.commit('setAuth', { value: true });

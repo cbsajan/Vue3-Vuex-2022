@@ -26,7 +26,7 @@ export default {
     countComponent
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters('counter', {
       prize: 'getPrize'
     }),
     // ...mapGetters(['getPrize'])
@@ -35,7 +35,7 @@ export default {
     // },
   },
   methods: {
-    ...mapMutations(['add', 'subtract']),
+    ...mapMutations('counter', ['add', 'subtract']),
     // add(){
     //   this.$store.commit('add');
     // },
